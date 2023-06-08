@@ -1,10 +1,13 @@
 const express = require('express');
 const productRoutes = require("./router/productRoutes");
 const orderRoutes = require("./router/orderRoutes");
+const bodyParser = require('body-parser');
 
 // initalize our application - the instance of our app
 const app = express();
 const PORT = 3000;
+
+app.use(bodyParser.json());
 
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
