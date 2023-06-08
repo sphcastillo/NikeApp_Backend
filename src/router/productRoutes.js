@@ -6,13 +6,13 @@ const { getProduct, getAllProducts } = require('../database/products');
 router.get('/', async (req, res) => {
     const products = await getAllProducts();
     // see data in the console.log? - our connection will MongoDB is successful
-    console.log("products: ", products);
+    // console.log("products: ", products);
     res.send({ status: 'OK', data: products });
 });
 
 // get one product
 router.get('/:productId', async (req, res) => {
-    // add error handling to avoid crash with try/ catch
+    // add error handling
     try {
         const product = await getProduct(req.params.productId);
         // if product is null
