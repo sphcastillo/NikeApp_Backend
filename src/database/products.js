@@ -1,17 +1,17 @@
 const { ObjectId } = require("mongodb");
-const db = require("./db");
+const getDB = require("./db");
 
 // this will fetch the products from the database
 const getAllProducts = async ()  => {
 
-    return await db.products.find().toArray();
+    return await getDB().products.find().toArray();
 
 }
 
 // get one product
 const getProduct = async(id) => {
 
-    return await db.products.findOne({_id: new ObjectId(id)  });
+    return await getDB().products.findOne({_id: new ObjectId(id)  });
 }
 
 module.exports = {

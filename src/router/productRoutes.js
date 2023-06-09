@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
 // get one product
 router.get('/:productId', async (req, res) => {
-    // add error handling
+    console.log("Query product with id: ", req.params.productId);
     try {
         const product = await getProduct(req.params.productId);
         // if product is null
