@@ -10,11 +10,14 @@
     // if client is null, only then create a new MongoClient
     // otherwise use the same that was already generated
     if(!client){
-        console.log("Creating a new client!");
-        client = new MongoClient(uri);
-    }else {
-        console.log("Re using the old client");
+        client= new MongoClient(uri);
     }
+    // if(!client){
+    //     console.log("Creating a new client!");
+    //     client = new MongoClient(uri);
+    // }else {
+    //     console.log("Re using the old client");
+    // }
 
     const database = client.db('test');
     const products = database.collection('products');
